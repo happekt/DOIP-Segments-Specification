@@ -25,6 +25,32 @@
         ]
       },
       "additionalProperties": false
+    },
+    "authentication": {
+      "type": "object",
+      "properties": {
+        "anyOf": [
+          {
+            "username": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            }
+          },
+          {
+            "token": {
+              "type": "string"
+            }
+          },
+          {
+            "key": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "additionalProperties": false
     }
   },
   "required": [
