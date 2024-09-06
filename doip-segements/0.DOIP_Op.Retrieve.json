@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "targetId": {
+      "type": "string"
+    },
+    "operationId": {
+      "type": "string"
+    },
+    "attributes": {
+      "type": "object",
+      "properties": {
+        "anyOf": [
+          {
+            "element": {
+              "type": "string"
+            }
+          },
+          {
+            "includeElementData": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "targetId",
+    "operationId"
+  ],
+  "additionalProperties": false
+}
