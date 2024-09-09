@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft/2020-12/schema#",
   "type": "object",
   "properties": {
     "requestId": {
@@ -16,47 +16,53 @@
     },
     "attributes": {
       "type": "object",
-      "properties": {
-        "anyOf": [
-          {
-            "element": {
+      "anyOf": [
+        {
+          "properties": {
+            "elements": {
               "type": "string"
             }
-          },
-          {
+          }
+        },
+        {
+          "properties": {
             "includeElementData": {
               "type": "string"
             }
           }
-        ]
-      },
+        }
+      ],
       "description": "attributes: optional array of JSON properties; operation stipulated.",
       "additionalProperties": false
     },
     "authentication": {
       "type": "object",
-      "properties": {
-        "anyOf": [
-          {
+      "anyOf": [
+        {
+          "properties": {
             "username": {
               "type": "string"
             },
             "password": {
               "type": "string"
             }
-          },
-          {
+          }
+        },
+        {
+          "properties": {
             "token": {
               "type": "string"
             }
-          },
-          {
+          }
+        },
+        {
+          "properties": {
             "key": {
               "type": "string"
             }
           }
-        ]
-      },
+        }
+      ],
       "description": "authentication: optional JSON object used by clients to authenticate.",
       "additionalProperties": false
     }
