@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft/2020-12/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "id: the identifier of the DO."
+    },
+    "type": {
+      "type": "string",
+      "description": "type: the DO type. Must be 0.TYPE/DO or its extension. See Types section."
+    },
+    "attributes": {
+      "type": "object",
+      "description": "attributes: one or more fields (key-value pairs) serialized as a JSON (sub) object."
+    },
+    "elements": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "id: identifier of the element; must be unique within a DO."
+        },
+        "length": {
+          "type": "string",
+          "description": "length of the data portion."
+        },
+        "type": {
+          "type": "string",
+          "description": "requestId: the identifier of the request provided by the client; shall be unique within a given DOIP session so clients can distinguish between DOIP service responses. The requestId shall be a string not exceeding 4096 bits."
+        },
+        "attributes": {
+          "type": "object",
+          "description": "one or more fields serialized as an object using the default serialization, or as a JSON (sub) object."
+        }
+      },
+      "required": [
+        "id",
+        "type"
+      ],
+      "additionalProperties": false,
+      "description": "description: one or more elements serialized as an array in the default serialization, with each element consisting of"
+    },
+    "signatures": {
+      "type": "string",
+      "description": "Required for DOs of type 0.TYPE/DOIPServiceInfo and 0.TYPE/DOIPOperation; otherwise optional. The field is an array of strings in the default serialization; each string is in JWS format19 with an unencoded detached payload."
+    }
+  },
+  "required": [
+    "id",
+    "type"
+  ],
+  "additionalProperties": false,
+  "description":"Any DO communicated via DOIP must be serialized using the DOIP Serialization. The order of serialization of the various fields as defined next are not important. "
+}
