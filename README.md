@@ -8,9 +8,10 @@ Please refer to https://www.dona.net/sites/default/files/2018-11/DOIPv2Spec_1.pd
 
 ## Structure
 
-Each Subfolder contains the request and answer segments for a specific operations.
+The subfolders contain the request and answer segments for the specific operations.
 Those operations are: hello, create, access, update, delete, search, and listOperations.
-Please add new folders for any Extended Operations such as Op.CreateFDO.
+Extended Operations such as Op.CreateFDO can be added following the naming convention.
+
 
 ## Work in Progress
 
