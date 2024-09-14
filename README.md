@@ -19,3 +19,5 @@ Extended Operations such as Op.CreateFDO can be added following the naming conve
 create an issue if necessary. 
 
 2) Other serializtaion next to json will be created and uploaded.
+
+3) The segments will be registered in the type registry https://typeregistry.lab.pidconsortium.net and the Json schemas will then be derived from those defintions.
