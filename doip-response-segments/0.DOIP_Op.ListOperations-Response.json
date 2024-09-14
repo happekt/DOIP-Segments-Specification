@@ -20,7 +20,7 @@
       ],
       "description": "status: an identifier that indicates the status of the request. Status codes shall have associated unique identifiers resolvable as specified in the IRP."
     },
-    "outout": {
+    "output": {
       "type": "array",
       "items": {
         "type": "string",
