@@ -4,8 +4,8 @@ for file in ../doip-response-segments/*.json; do
 	echo "Processing" $file
 	tmp1=${file%.json}
 	name=${tmp1##*Op.}
-	classname=${name%-Response}
-	filename=${classname}_response.py
+	classname=${name%-Response}_response
+	filename=${classname}.py
 	datamodel-codegen \
 		--input $file \
 		--input-file-type jsonschema \
@@ -17,8 +17,8 @@ for file in ../doip-request-segments/*.json; do
 	echo "Processing" $file
 	tmp1=${file%.json}
 	name=${tmp1##*Op.}
-	classname=${name%-Request}
-	filename=${classname}_request.py
+	classname=${name%-Request}_request
+	filename=${classname}.py
 	datamodel-codegen \
 		--input $file \
 		--input-file-type jsonschema \
