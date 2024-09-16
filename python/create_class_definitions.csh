@@ -1,29 +1,28 @@
 !#/bin/bash
 
-for filename in ../doip-response-segments/*.json; do
-	echo "Processing" $filename
-	tmp=${filename%.json}.py
-	fname=${tmp##*/}
-	classname=${fname%-Response.py}
-	cname=${classname##*Op.}
+for file in ../doip-response-segments/*.json; do
+	echo "Processing" $file
+	tmp1=${file%.json}
+	name=${tmp1##*Op.}
+	classname=${name%-Response}
+	filename=${classname}_response.py
 	datamodel-codegen \
-		--input $filename \
+		--input $file \
 		--input-file-type jsonschema \
-		--output $fname \
-		--class-name $cname 
+		--output $filename \
+		--class-name $classname 
 done
 
-
-for filename in ../doip-request-segments/*.json; do
-	echo "Processing" $filename
-	tmp=${filename%.json}.py
-	fname=${tmp##*/}
-	classname=${fname%-Request.py}
-	cname=${classname##*Op.}
+for file in ../doip-request-segments/*.json; do
+	echo "Processing" $file
+	tmp1=${file%.json}
+	name=${tmp1##*Op.}
+	classname=${name%-Request}
+	filename=${classname}_request.py
 	datamodel-codegen \
-		--input $filename \
+		--input $file \
 		--input-file-type jsonschema \
-		--output $fname \
-		--class-name $cname 
+		--output $filename \
+		--class-name $classname 
 done
 
