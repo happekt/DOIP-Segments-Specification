@@ -37,9 +37,8 @@ class Output(BaseModel):
         extra = Extra.forbid
 
     id: str = Field(..., description='id: the identifier of the DO.')
-    type: str = Field(
-        'DOIPServiceInfo',
-        const=True,
+    type: Literal['DOIPServiceInfo'] = Field(
+        ...,
         description='type: the DO type. Must be 0.TYPE/DO or its extension. See Types section.',
     )
     attributes: Attributes = Field(
