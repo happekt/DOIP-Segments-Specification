@@ -50,7 +50,9 @@
               "description": "the IP address of the service."
             },
             "port": {
-              "type": "string",
+              "type": "integer",
+              "minimum" : 0,
+              "maximum" : 65535,
               "description": "the listening port on the IP address."
             },
             "protocol": {
