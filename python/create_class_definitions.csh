@@ -10,6 +10,9 @@ for file in ../doip-response-segments/*.json; do
 		--input $file \
 		--input-file-type jsonschema \
 		--output $filename \
+                --enum-field-as-literal all \
+                --disable-timestamp \
+                --enable-version-header \
 		--class-name $classname 
 done
 
@@ -23,6 +26,9 @@ for file in ../doip-request-segments/*.json; do
 		--input $file \
 		--input-file-type jsonschema \
 		--output $filename \
+                --enum-field-as-literal all \
+                --disable-timestamp \
+                --enable-version-header \
 		--class-name $classname 
 done
 
