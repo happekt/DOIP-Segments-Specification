@@ -16,7 +16,7 @@
     },
     "operationId": {
       "type": "string",
-      "const": "0.DOIP/Op.Search",
+      "const": "0.DOIP/Op.Update",
       "description": "operationId: the identifier of the operation to be performed."
     },
     "authentication": {
@@ -50,48 +50,15 @@
       "description": "authentication: optional JSON object used by clients to authenticate.",
       "additionalProperties": false
     },
-    "attributes": {
-      "type": "object",
-      "properties": {
-        "query": {
-          "type": "string",
-          "description": "the search query to be performed, in a textual representation"
-        },
-        "pageNum": {
-          "type": "integer",
-          "minimum": 0,
-          "description": "the page number to be returned, starting with 0"
-        },
-        "pageSize": {
-          "type": "integer",
-          "description": "the page size to be returned; if missing or negative, all results will be returned; if zero, no results are returned, but the 'size' is still returned"
-        },
-        "sortFields": {
-          "type": "string",
-          "description": "a comma-separated list of sort specifications, each of which is a field name optionally followed by ASC or DESC"
-        },
-        "type": {
-          "enum": [
-            "id",
-            "full"
-          ],
-          "type": "string",
-          "default": "full",
-          "description": "either 'id', to return just object ids, or 'full', to return full object data (omitting element data); defaults to 'full'"
-        }
-      },
-      "required": [
-        "query"
-      ],
-      "description": "attributes: optional array of JSON properties; operation stipulated.",
-      "additionalProperties": false
+    "input": {
+      "$ref": "https://raw.githubusercontent.com/FDO-Implementations/DOIP-Segments-Specification/refs/heads/main/doip_do_serialization/doip_do_serialization.json",
+      "description": "Input: a serialized digital object. The default serialization may be used if the object lacks element data; otherwise the serialization is a multi-segment DO serialization as described above. The 'id' can be omitted to ask the DOIP service to automatically choose the id."
     }
   },
   "required": [
     "targetId",
-    "operationId",
-    "attributes"
+    "operationId"
   ],
   "additionalProperties": false,
-  "description": "An operation to discover digital objects by searching metadata contained in the set of digital objects managed by the DOIP service."
+  "description": "An operation to update (some parts of the) information represented by the target DO."
 }

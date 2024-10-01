@@ -60,5 +60,5 @@
     "operationId"
   ],
   "additionalProperties": false,
-  "description": "An operation to allow a client to get information about the DOIP service."
+  "description": "An operation to create a digital object within the DOIP service. The target of a creation operation is the DOIP service itself."
 }
