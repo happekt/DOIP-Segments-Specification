@@ -90,5 +90,5 @@
     "output"
   ],
   "additionalProperties": false,
-  "description": "reponse of a O.DOIP/Op.ListOperations request"
+  "description": "reponse of a O.DOIP/Op.Hello request"
 }
