@@ -39,6 +39,9 @@ class HelloRequest(BaseModel):
         None,
         description='requestId: the identifier of the request provided by the client; shall be unique within a given DOIP session so clients can distinguish between DOIP service responses. The requestId shall be a string not exceeding 4096 bits.',
     )
+    clientId: Optional[str] = Field(
+        None, description='clientId: the identifier of the client.'
+    )
     targetId: str = Field(
         ...,
         description='targetId: the identifier of the DO on which the operation is to be invoked; the DOIP service could itself be the target.',
