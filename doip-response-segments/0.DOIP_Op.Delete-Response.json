@@ -9,14 +9,7 @@
     "status": {
       "type": "string",
       "enum": [
-        "0.DOIP/Status.001",
-        "0.DOIP/Status.101",
-        "0.DOIP/Status.102",
-        "0.DOIP/Status.103",
-        "0.DOIP/Status.104",
-        "0.DOIP/Status.105",
-        "0.DOIP/Status.200",
-        "0.DOIP/Status.500"
+        "0.DOIP/Status.001"
       ],
       "description": "status: an identifier that indicates the status of the request. Status codes shall have associated unique identifiers resolvable as specified in the IRP."
     },
@@ -29,5 +22,5 @@
     "status"
   ],
   "additionalProperties": false,
-  "description": "reponse of a O.DOIP/Op.Delete request"
+  "description": "response of a O.DOIP/Op.Delete request"
 }

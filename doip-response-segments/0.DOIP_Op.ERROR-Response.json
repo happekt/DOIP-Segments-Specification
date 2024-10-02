@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft/2020-12/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "properties": {
     "requestId": {
@@ -9,23 +9,31 @@
     "status": {
       "type": "string",
       "enum": [
-        "0.DOIP/Status.001"
+        "0.DOIP/Status.101",
+        "0.DOIP/Status.102",
+        "0.DOIP/Status.103",
+        "0.DOIP/Status.104",
+        "0.DOIP/Status.105",
+        "0.DOIP/Status.200",
+        "0.DOIP/Status.500"
       ],
       "description": "status: an identifier that indicates the status of the request. Status codes shall have associated unique identifiers resolvable as specified in the IRP."
     },
     "output": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "uniqueItems": true
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string",
+          "description": "A message to explain the error in more detail"
+        }
       },
-      "description": "a serialized list of strings based on the default serialization, each of which is an operation id that the target DO supports."
+      "additionalProperties": false
     }
   },
+  "additionalProperties": false,
   "required": [
     "status",
     "output"
   ],
-  "additionalProperties": false,
-  "description": "response of a O.DOIP/Op.ListOperations request"
+  "description": "Error Response"
 }
