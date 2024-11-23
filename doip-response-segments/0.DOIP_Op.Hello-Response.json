@@ -28,7 +28,7 @@
         },
         "attributes": {
           "type": "object",
-          "additionalProperties": false,
+          "additionalProperties": true,
           "properties": {
             "serviceName": {
               "type": "string",
