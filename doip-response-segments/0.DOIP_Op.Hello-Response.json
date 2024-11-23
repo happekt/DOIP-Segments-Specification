@@ -23,7 +23,7 @@
         },
         "type": {
           "type": "string",
-          "enum": ["DOIPServiceInfo","0.TYPE/DOIPServiceInfo"],
+          "enum": ["0.TYPE/DOIPServiceInfo","DOIPServiceInfo"],
           "description": "type: the DO type. Must be 0.TYPE/DO or its extension. See Types section."
         },
         "attributes": {
