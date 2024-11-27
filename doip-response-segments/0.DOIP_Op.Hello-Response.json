@@ -57,8 +57,15 @@
               "description": "highest version of the DOIP protocol supported."
             },
             "publicKey": {
-              "type": "string",
-              "description": "the public key expressed in JWK format as a default."
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "the public key expressed in JWK format as a default."
+                },
+                {
+                  "type": "string"
+                }
+              ]
             }
           },
           "required": [
