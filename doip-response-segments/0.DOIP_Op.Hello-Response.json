@@ -59,7 +59,7 @@
             "publicKey": {
               "anyOf": [
                 {
-                  "type": "object",
+                  "$ref": "https://typeapi.lab.pidconsortium.net/v1/types/schema/21.T11969/e3172307d5c8249d4e0a",
                   "description": "the public key expressed in JWK format as a default."
                 },
                 {
