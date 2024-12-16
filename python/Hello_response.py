@@ -4,14 +4,14 @@
 
 from __future__ import annotations
 
-from typing import Literal, Optional
+from typing import Any, Dict, Literal, Optional, Union
 
 from pydantic import BaseModel, Extra, Field, conint
 
 
 class Attributes(BaseModel):
     class Config:
-        extra = Extra.forbid
+        extra = Extra.allow
 
     serviceName: Optional[str] = Field(
         None, description='the name of the DOIP service.'
@@ -27,9 +27,7 @@ class Attributes(BaseModel):
     protocolVersion: str = Field(
         ..., description='highest version of the DOIP protocol supported.'
     )
-    publicKey: str = Field(
-        ..., description='the public key expressed in JWK format as a default.'
-    )
+    publicKey: Union[Dict[str, Any], str]
 
 
 class Output(BaseModel):
@@ -37,7 +35,7 @@ class Output(BaseModel):
         extra = Extra.forbid
 
     id: str = Field(..., description='id: the identifier of the DO.')
-    type: Literal['DOIPServiceInfo'] = Field(
+    type: Literal['0.TYPE/DOIPServiceInfo', 'DOIPServiceInfo'] = Field(
         ...,
         description='type: the DO type. Must be 0.TYPE/DO or its extension. See Types section.',
     )
