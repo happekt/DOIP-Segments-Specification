@@ -24,8 +24,9 @@
       "anyOf": [
         {
           "properties": {
-            "elements": {
-              "type": "string"
+            "element": {
+              "type": "string",
+              "description": "the identifier (id) of a specific element of the DO serialization"
             }
           }
         },
