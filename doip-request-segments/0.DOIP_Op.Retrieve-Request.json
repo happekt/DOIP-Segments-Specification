@@ -33,7 +33,9 @@
         {
           "properties": {
             "includeElementData": {
-              "type": "string"
+              "type": "boolean",
+              "default": "false",
+              "description": "if true, returns the serialization of the DO including all element data"
             }
           }
         }
