@@ -30,25 +30,30 @@
             "password": {
               "type": "string"
             }
-          }
+          },
+          "additionalProperties": false,
+          "required": ["username", "password"]
         },
         {
           "properties": {
             "token": {
               "type": "string"
             }
-          }
+          },
+          "additionalProperties": false,
+          "required": ["token"]
         },
         {
           "properties": {
             "key": {
               "type": "string"
             }
-          }
+          },
+          "additionalProperties": false,
+          "required": ["key"]
         }
       ],
-      "description": "authentication: optional JSON object used by clients to authenticate.",
-      "additionalProperties": false
+      "description": "authentication: optional JSON object used by clients to authenticate."
     },
     "input": {
       "$ref": "https://raw.githubusercontent.com/FDO-Implementations/DOIP-Segments-Specification/refs/heads/main/doip_do_serialization/doip_do_serialization.json",
