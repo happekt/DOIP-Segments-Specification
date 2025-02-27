@@ -27,7 +27,7 @@
         },
         "type": {
           "type": "string",
-          "description": "requestId: the identifier of the request provided by the client; shall be unique within a given DOIP session so clients can distinguish between DOIP service responses. The requestId shall be a string not exceeding 4096 bits."
+          "description": "shall be a type as defined in this spec or a MIME type"
         },
         "attributes": {
           "type": "object",
