@@ -27,6 +27,7 @@
           "description": "record: the JSON object containing all type-value-pairs that are written into the PID record at DO creation."
         }
       },
+      "required": ["record"],
       "description": "attributes: mandatory JSON object to specify the type-value pairs for the PID record"
     },
     "authentication": {
@@ -80,8 +81,7 @@
   "required": [
     "clientId",
     "targetId",
-    "operationId",
-    "attributes"
+    "operationId"
   ],
   "additionalProperties": false,
   "description": "An operation to create a digital object within the DOIP service and the corresponding PID record in the Handle system. The target of a creation operation is the DOIP service itself."

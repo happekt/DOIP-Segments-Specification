@@ -21,6 +21,7 @@
           "description": "record: the JSON object containing all type-value-pairs that were used to override the previous values in the PID record."
         }
       },
+      "required": ["record"],
       "description": "attributes: JSON object that returns the type-value pairs in the PID record."
     },
     "output": {
@@ -30,7 +31,6 @@
   },
   "required": [
     "status",
-    "attributes",
     "output"
   ],
   "additionalProperties": false,

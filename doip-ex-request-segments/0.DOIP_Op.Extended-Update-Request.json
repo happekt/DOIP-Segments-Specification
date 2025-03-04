@@ -27,6 +27,7 @@
           "description": "record: the JSON object containing all type-value-pairs that are used to override the entries in the PID record."
         }
       },
+      "required": ["record"],
       "description": "attributes: mandatory JSON object to specify the type-value pairs for the PID record"
     },
     "authentication": {
@@ -80,8 +81,7 @@
   "required": [
     "clientId",
     "targetId",
-    "operationId",
-    "attributes"
+    "operationId"
   ],
   "additionalProperties": false,
   "description": "An operation to update (some parts of the) information represented by the target DO or the PID record."

@@ -21,6 +21,7 @@
           "description": "record: the JSON object containing all type-value-pairs that were written into the PID record at DO creation."
         }
       },
+      "required": ["record"],
       "description": "attributes: JSON object that specifies the type-value pairs for the PID record"
     },
     "output": {
@@ -30,7 +31,6 @@
   },
   "required": [
     "status",
-    "attributes",
     "output"
   ],
   "additionalProperties": false,
