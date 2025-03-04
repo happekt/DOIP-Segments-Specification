@@ -16,7 +16,7 @@
     },
     "operationId": {
       "type": "string",
-      "const": "0.DOIP/Op.Extended-Create",
+      "const": "0.DOIP/Op.Extended-Update",
       "description": "operationId: the identifier of the operation to be performed."
     },
     "attributes": {
@@ -24,7 +24,7 @@
       "properties": {
         "record": {
           "type": "object",
-          "description": "record: the JSON object containing all type-value-pairs that are written into the PID record at DO creation."
+          "description": "record: the JSON object containing all type-value-pairs that are used to override the entries in the PID record."
         }
       },
       "description": "attributes: mandatory JSON object to specify the type-value pairs for the PID record"
@@ -42,10 +42,7 @@
             }
           },
           "additionalProperties": false,
-          "required": [
-            "username",
-            "password"
-          ]
+          "required": ["username", "password"]
         },
         {
           "properties": {
@@ -54,9 +51,7 @@
             }
           },
           "additionalProperties": false,
-          "required": [
-            "token"
-          ]
+          "required": ["token"]
         },
         {
           "properties": {
@@ -65,9 +60,7 @@
             }
           },
           "additionalProperties": false,
-          "required": [
-            "key"
-          ]
+          "required": ["key"]
         }
       ],
       "description": "authentication: optional JSON object used by clients to authenticate."
@@ -85,5 +78,5 @@
     "attributes"
   ],
   "additionalProperties": false,
-  "description": "An operation to create a digital object within the DOIP service and the corresponding PID record in the Handle system. The target of a creation operation is the DOIP service itself."
+  "description": "An operation to update (some parts of the) information represented by the target DO or the PID record."
 }
