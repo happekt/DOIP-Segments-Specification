@@ -16,7 +16,7 @@
     },
     "operationId": {
       "type": "string",
-      "const": "0.HDOIP/Op.Create",
+      "const": "0.DOIP/Op.Extended-Create",
       "description": "operationId: the identifier of the operation to be performed."
     },
     "attributes": {
@@ -85,5 +85,5 @@
     "attributes"
   ],
   "additionalProperties": false,
-  "description": "An operation to create a digital object within the DOIP service. The target of a creation operation is the DOIP service itself."
+  "description": "An operation to create a digital object within the DOIP service and the corresponding FDO record in the Handle system. The target of a creation operation is the DOIP service itself."
 }
