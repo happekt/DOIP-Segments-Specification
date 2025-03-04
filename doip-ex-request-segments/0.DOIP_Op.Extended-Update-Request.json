@@ -42,7 +42,10 @@
             }
           },
           "additionalProperties": false,
-          "required": ["username", "password"]
+          "required": [
+            "username",
+            "password"
+          ]
         },
         {
           "properties": {
@@ -51,7 +54,9 @@
             }
           },
           "additionalProperties": false,
-          "required": ["token"]
+          "required": [
+            "token"
+          ]
         },
         {
           "properties": {
@@ -60,7 +65,9 @@
             }
           },
           "additionalProperties": false,
-          "required": ["key"]
+          "required": [
+            "key"
+          ]
         }
       ],
       "description": "authentication: optional JSON object used by clients to authenticate."
@@ -71,7 +78,6 @@
     }
   },
   "required": [
-    "requestId",
     "clientId",
     "targetId",
     "operationId",

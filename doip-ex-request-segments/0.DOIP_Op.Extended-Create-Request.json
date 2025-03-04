@@ -78,7 +78,6 @@
     }
   },
   "required": [
-    "requestId",
     "clientId",
     "targetId",
     "operationId",
