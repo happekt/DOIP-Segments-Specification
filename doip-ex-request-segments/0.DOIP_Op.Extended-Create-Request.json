@@ -26,7 +26,7 @@
           "type": "object",
           "properties": {
             "FDO_Profile_Ref": {
-              "type": "string"
+              "type": "string",
               "description":"FDO_Profile_Ref: reference to a FDO configuation type"
             }
           },
