@@ -5,7 +5,7 @@ this repository hosts the Json Schema Objects for validating the
 segmentes described in the specification.
 
 Please refer to https://www.dona.net/sites/default/files/2018-11/DOIPv2Spec_1.pdf
-or use the (PID)[http://hdl.handle.net/0.100/DO-IRPV3.0]
+or use the [PID](http://hdl.handle.net/0.100/DO-IRPV3.0)
 
 The specification includes the following basic operations: hello, create, access, update, delete, search, and
 listOperations
@@ -24,5 +24,5 @@ listOperations
 ## Work in Progress
 
 * Other serialization next to json will be created and uploaded.
-* The segments might be registered in the type registry https://typeregistry.lab.pidconsortium.net and the Json schemas
+* The segments might be registered in the [type registry](https://typeregistry.lab.pidconsortium.net) and the Json schemas
   will then be derived from those defintions.
