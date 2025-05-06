@@ -25,12 +25,12 @@
         "record": {
           "type": "object",
           "properties": {
-            "FDO_Profile_Ref": {
+            "21.T11966/FdoProfile": {
               "type": "string",
-              "description":"FDO_Profile_Ref: reference to a FDO configuation type"
+              "description":"21.T11966/FdoProfile: reference to a FDO configuation type"
             }
           },
-          "required": ["FDO_Profile_Ref"],
+          "required": ["21.T11966/FdoProfile"],
           "description": "record: the JSON object containing all type-value-pairs that are written into the PID record at DO creation."
         }
       },
