@@ -5,6 +5,7 @@ this repository hosts the Json Schema Objects for validating the
 segmentes described in the specification.
 
 Please refer to https://www.dona.net/sites/default/files/2018-11/DOIPv2Spec_1.pdf
+or use the (PID)[http://hdl.handle.net/0.100/DO-IRPV3.0]
 
 The specification includes the following basic operations: hello, create, access, update, delete, search, and
 listOperations
