@@ -15,23 +15,26 @@
       "description": "attributes: one or more fields (key-value pairs) serialized as a JSON (sub) object."
     },
     "elements": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "id: identifier of the element; must be unique within a DO."
-        },
-        "length": {
-          "type": "string",
-          "description": "length of the data portion."
-        },
-        "type": {
-          "type": "string",
-          "description": "shall be a type as defined in this spec or a MIME type"
-        },
-        "attributes": {
-          "type": "object",
-          "description": "one or more fields serialized as an object using the default serialization, or as a JSON (sub) object."
+      "type":"array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "id: identifier of the element; must be unique within a DO."
+          },
+          "length": {
+            "type": "string",
+            "description": "length of the data portion."
+          },
+          "type": {
+            "type": "string",
+            "description": "shall be a type as defined in this spec or a MIME type"
+          },
+          "attributes": {
+            "type": "object",
+            "description": "one or more fields serialized as an object using the default serialization, or as a JSON (sub) object."
+          }
         }
       },
       "required": [
