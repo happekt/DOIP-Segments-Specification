@@ -44,7 +44,7 @@
             "record": {
               "type": "boolean",
               "default": "false",
-              "description": "if true, returns a list of FDO attributes from the FDO record"
+              "description": "if true, returns all FDO attributes from the FDO record"
             }
           }
         }
