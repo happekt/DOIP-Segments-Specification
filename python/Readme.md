@@ -12,6 +12,7 @@ to translate.
 In `bash` or `cshell`:
 ```
 python -m venv convert_env
+source convert_env/bin/activate
 pip install datamodel-code-generator
 pip install httpx
 ./create_class_definitions.csh
