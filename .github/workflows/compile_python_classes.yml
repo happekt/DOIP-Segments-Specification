@@ -26,8 +26,10 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install datamodel-code-generator
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install datamodel-code-generator httpx
+        #if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: compile
       run: |
+        cd python 
+        ./create_class_definitions.csh
         # stop the build if there are Python syntax errors or undefined names
