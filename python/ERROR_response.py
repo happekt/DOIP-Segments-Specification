@@ -6,22 +6,22 @@ from __future__ import annotations
 
 from typing import Literal, Optional
 
-from pydantic import BaseModel, Extra, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class Output(BaseModel):
-    class Config:
-        extra = Extra.forbid
-
+    model_config = ConfigDict(
+        extra='forbid',
+    )
     message: Optional[str] = Field(
         None, description='A message to explain the error in more detail'
     )
 
 
 class ERRORResponse(BaseModel):
-    class Config:
-        extra = Extra.forbid
-
+    model_config = ConfigDict(
+        extra='forbid',
+    )
     requestId: Optional[str] = Field(
         None,
         description='requestId: the identifier of the request to which this is a response. The DOIP service must include in its response the requestId provided by the client.',

@@ -4,9 +4,9 @@
 
 from __future__ import annotations
 
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, List, Literal, Optional, Union
 
-from pydantic import BaseModel, Extra, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class Attributes(BaseModel):
@@ -17,24 +17,24 @@ class Attributes(BaseModel):
 
 
 class Authentication(BaseModel):
-    class Config:
-        extra = Extra.forbid
-
+    model_config = ConfigDict(
+        extra='forbid',
+    )
     username: str
     password: str
 
 
 class Authentication1(BaseModel):
-    class Config:
-        extra = Extra.forbid
-
+    model_config = ConfigDict(
+        extra='forbid',
+    )
     token: str
 
 
 class Authentication2(BaseModel):
-    class Config:
-        extra = Extra.forbid
-
+    model_config = ConfigDict(
+        extra='forbid',
+    )
     key: str
 
 
@@ -53,9 +53,9 @@ class Element(BaseModel):
 
 
 class DoipDoSerialization(BaseModel):
-    class Config:
-        extra = Extra.forbid
-
+    model_config = ConfigDict(
+        extra='forbid',
+    )
     id: str = Field(..., description='id: the identifier of the DO.')
     type: str = Field(
         ...,
@@ -76,9 +76,9 @@ class DoipDoSerialization(BaseModel):
 
 
 class ExtendedUpdateRequest(BaseModel):
-    class Config:
-        extra = Extra.forbid
-
+    model_config = ConfigDict(
+        extra='forbid',
+    )
     requestId: Optional[str] = Field(
         None,
         description='requestId: the identifier of the request provided by the client; shall be unique within a given DOIP session so clients can distinguish between DOIP service responses. The requestId shall be a string not exceeding 4096 bits.',
@@ -88,10 +88,8 @@ class ExtendedUpdateRequest(BaseModel):
         ...,
         description='targetId: the identifier of the DO on which the operation is to be invoked; the DOIP service could itself be the target.',
     )
-    operationId: str = Field(
-        '0.DOIP/Op.Extended-Update',
-        const=True,
-        description='operationId: the identifier of the operation to be performed.',
+    operationId: Literal['0.DOIP/Op.Extended-Update'] = Field(
+        ..., description='operationId: the identifier of the operation to be performed.'
     )
     attributes: Optional[Attributes] = Field(
         None,

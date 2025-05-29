@@ -4,15 +4,15 @@
 
 from __future__ import annotations
 
-from typing import Optional, Union
+from typing import Literal, Optional, Union
 
-from pydantic import BaseModel, Extra, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class Attributes(BaseModel):
-    class Config:
-        extra = Extra.forbid
-
+    model_config = ConfigDict(
+        extra='forbid',
+    )
     element: Optional[str] = Field(
         None,
         description='the identifier (id) of a specific element of the DO serialization',
@@ -20,9 +20,9 @@ class Attributes(BaseModel):
 
 
 class Attributes1(BaseModel):
-    class Config:
-        extra = Extra.forbid
-
+    model_config = ConfigDict(
+        extra='forbid',
+    )
     includeElementData: Optional[bool] = Field(
         'false',
         description='if true, returns the serialization of the DO including all element data',
@@ -30,40 +30,40 @@ class Attributes1(BaseModel):
 
 
 class Attributes2(BaseModel):
-    class Config:
-        extra = Extra.forbid
-
+    model_config = ConfigDict(
+        extra='forbid',
+    )
     record: Optional[bool] = Field(
         'false', description='if true, returns all FDO attributes from the FDO record'
     )
 
 
 class Authentication(BaseModel):
-    class Config:
-        extra = Extra.forbid
-
+    model_config = ConfigDict(
+        extra='forbid',
+    )
     username: str
     password: str
 
 
 class Authentication1(BaseModel):
-    class Config:
-        extra = Extra.forbid
-
+    model_config = ConfigDict(
+        extra='forbid',
+    )
     token: str
 
 
 class Authentication2(BaseModel):
-    class Config:
-        extra = Extra.forbid
-
+    model_config = ConfigDict(
+        extra='forbid',
+    )
     key: str
 
 
 class ExtendedRetrieveRequest(BaseModel):
-    class Config:
-        extra = Extra.forbid
-
+    model_config = ConfigDict(
+        extra='forbid',
+    )
     requestId: Optional[str] = Field(
         None,
         description='requestId: the identifier of the request provided by the client; shall be unique within a given DOIP session so clients can distinguish between DOIP service responses. The requestId shall be a string not exceeding 4096 bits.',
@@ -75,10 +75,8 @@ class ExtendedRetrieveRequest(BaseModel):
         ...,
         description='targetId: the identifier of the DO on which the operation is to be invoked; the DOIP service could itself be the target.',
     )
-    operationId: str = Field(
-        '0.DOIP/Op.Retrieve',
-        const=True,
-        description='operationId: the identifier of the operation to be performed.',
+    operationId: Literal['0.DOIP/Op.Retrieve'] = Field(
+        ..., description='operationId: the identifier of the operation to be performed.'
     )
     attributes: Optional[Union[Attributes, Attributes1, Attributes2]] = Field(
         None,
