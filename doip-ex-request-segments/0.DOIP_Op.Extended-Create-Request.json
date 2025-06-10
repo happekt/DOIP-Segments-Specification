@@ -32,6 +32,10 @@
           },
           "required": ["21.T11966/FdoProfile"],
           "description": "record: the JSON object containing all type-value-pairs that are written into the PID record at DO creation."
+        },
+        "dynamic_record": {
+          "type": "object",
+          "description": "dynamic_record: a JSON object containing type-value-pairs that are written into the PID record at DO creation. The values are dynamically generated and denoted as function(input1, ...)"
         }
       },
       "required": ["record"],
