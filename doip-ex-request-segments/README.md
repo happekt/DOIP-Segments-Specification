@@ -60,3 +60,10 @@ the FDO PID. The operation may be performed by any DOIP service.
 * Output: a serialized object with properties
   * `valid`: the value is a boolean indicating whether the FDO is valid or not
   * `message`: optional message, e.g. to show validation errors to the client
+
+## Nanopub2Handle
+
+The Nanopub2Handle operation is a concatenation of Extended-Retrieve invoked on the Nanopub FDO and an Extended-Create 
+to build a Handle-based FDO out of the result from the Extended-Retrieve operation.
+
+TODO
