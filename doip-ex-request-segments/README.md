@@ -1,6 +1,8 @@
 # Specification of the extended operations
 
-## Extended-Create
+.[TOC]
+
+## Op.Extended-Create
 
 An operation to create a FAIR digital object within the DOIP service. The target of a creation operation is the DOIP service
 itself.
@@ -35,16 +37,23 @@ Other functions may be implemented by the DOIP service to dynamically generate o
 * Output: the default serialization of the created object omitting element data. Notably, includes the identifier of the
   object (even if chosen by the client) and any changes to the object automatically performed by the DOIP service.
 
+## Op.Extended-Update
 
-## Extended-Update
-
+### Request
 TODO
 
-## Extended-Retrieve
-
+### Response
 TODO
 
-## Validate
+## Op.Extended-Retrieve
+
+### Request
+TODO
+
+### Response
+TODO
+
+## Op.Validate
 
 The operation can be used to check whether a PID belongs to a valid FDO or not. The target of a validation operation is
 the FDO PID. The operation may be performed by any DOIP service.
@@ -61,9 +70,16 @@ the FDO PID. The operation may be performed by any DOIP service.
   * `valid`: the value is a boolean indicating whether the FDO is valid or not
   * `message`: optional message, e.g. to show validation errors to the client
 
-## Nanopub2Handle
-
+## Op.Nanopub2Handle
+ 
 The Nanopub2Handle operation is a concatenation of Extended-Retrieve invoked on the Nanopub FDO and an Extended-Create 
 to build a Handle-based FDO out of the result from the Extended-Retrieve operation.
 
-TODO
+## Op.Extended-QueryFreeText
+### Request
+* Request attributes:
+      * input: The text to be searched for.
+  
+### Response 
+
+The response follows the specification of 0.DOIP_Op.Search-Response.json
