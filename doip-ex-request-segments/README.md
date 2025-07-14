@@ -1,7 +1,5 @@
 # Specification of the extended operations
 
-.[TOC]
-
 ## Op.Extended-Create
 
 An operation to create a FAIR digital object within the DOIP service. The target of a creation operation is the DOIP service
