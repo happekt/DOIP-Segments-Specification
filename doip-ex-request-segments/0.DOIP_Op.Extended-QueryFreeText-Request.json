@@ -19,19 +19,6 @@
       "const": "0.DOIP/Op.Extended-QueryFreeText",
       "description": "operationId: the identifier of the operation to be performed."
     },
-    "attributes": {
-      "type": "object",
-      "properties": {
-        "input": {
-          "type": "string",
-          "description": "The text to be searched for."
-        }
-      },
-      "required": [
-        "input"
-      ],
-      "description": "attributes: mandatory JSON object to specify the input"
-    },
     "authentication": {
       "type": "object",
       "anyOf": [
@@ -75,9 +62,18 @@
       ],
       "description": "authentication: optional JSON object used by clients to authenticate."
     },
-    "input": {
-      "$ref": "https://raw.githubusercontent.com/FDO-Implementations/DOIP-Segments-Specification/refs/heads/main/doip_do_serialization/doip_do_serialization.json",
-      "description": "Input: a serialized digital object. The default serialization may be used if the object lacks element data; otherwise the serialization is a multi-segment DO serialization as described above. The 'id' can be omitted to ask the DOIP service to automatically choose the id."
+    "attributes": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "type": "string",
+          "description": "The text to be searched for."
+        }
+      },
+      "required": [
+        "input"
+      ],
+      "description": "attributes: mandatory JSON object to specify the input"
     }
   },
   "required": [
