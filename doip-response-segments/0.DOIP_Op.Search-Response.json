@@ -13,7 +13,7 @@
         },
         "size": {
             "type": "integer",
-            "description": "the number of results across all pages",
+            "description": "size: the number of results across all pages",
             "minimum": 0
         },
         "results": {
@@ -30,7 +30,8 @@
                         "description": "serialization of a digital object"
                     }
                 }
-            ]
+            ],
+            "description": "a list of results, each of which is either a string (the object id) or the default serialization of an object omitting element data."
         }
     },
     "required": [
