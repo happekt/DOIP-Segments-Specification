@@ -81,3 +81,13 @@ to build a Handle-based FDO out of the result from the Extended-Retrieve operati
 ### Response 
 
 The response follows the specification of 0.DOIP_Op.Search-Response.json
+
+## Op.QueryRef
+
+### Request
+* Request attributes:
+      * input: The PID or URI to be searched for.
+  
+### Response 
+
+The response follows the specification of 0.DOIP_Op.Search-Response.json
