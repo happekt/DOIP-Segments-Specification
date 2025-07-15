@@ -22,6 +22,10 @@ class Attributes(BaseModel):
         ...,
         description='record: the JSON object containing all type-value-pairs that are written into the PID record at DO creation.',
     )
+    dynamic_record: Optional[Dict[str, Any]] = Field(
+        None,
+        description='dynamic_record: a JSON object containing type-value-pairs that are written into the PID record at DO creation. The values are dynamically generated and denoted as function(input1, ...)',
+    )
 
 
 class Authentication(BaseModel):
