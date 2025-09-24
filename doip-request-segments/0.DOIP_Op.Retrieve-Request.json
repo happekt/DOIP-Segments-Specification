@@ -19,29 +19,20 @@
       "const": "0.DOIP/Op.Retrieve",
       "description": "operationId: the identifier of the operation to be performed."
     },
-    "attributes": {
+   "attributes": {
       "type": "object",
       "anyOf": [
         {
-          "properties": {
-            "element": {
-              "type": "string",
-              "description": "the identifier (id) of a specific element of the DO serialization"
-            }
-          }
+          "properties": { "element": { "type": "string" } },
+          "required": ["element"],
+          "additionalProperties": false
         },
         {
-          "properties": {
-            "includeElementData": {
-              "type": "boolean",
-              "default": "false",
-              "description": "if true, returns the serialization of the DO including all element data"
-            }
-          }
+          "properties": { "includeElementData": { "type": "boolean", "default": false } },
+          "required": ["includeElementData"],
+          "additionalProperties": false
         }
-      ],
-      "description": "attributes: optional array of JSON properties; operation stipulated.",
-      "additionalProperties": false
+      ]
     },
     "authentication": {
       "type": "object",
